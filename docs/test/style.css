@@ -2420,7 +2420,7 @@ html[data-theme=dark] {
 
 img {
     max-width: 100%;
-    border-radius:12px
+/*    border-radius:12px*/
 }
 
 .DocSearch-Button {

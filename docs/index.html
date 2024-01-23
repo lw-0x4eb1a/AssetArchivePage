@@ -50,10 +50,8 @@
     var links = document.querySelectorAll('a')
     var origin = location.origin
     links.forEach(function(a){
-      console.log(a.href)
       if (!a.href.startsWith(origin)){
         a.target = "_blank"
-        console.log(">>>>>")
       }
     })
   }
@@ -237,7 +235,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              主页
             
           </span>
         </div>
@@ -287,10 +285,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="home.md" class="md-tabs__link">
+    <a href="." class="md-tabs__link md-tabs__link--active">
       主页
     </a>
   </li>
@@ -306,22 +306,10 @@
   
     <li class="md-tabs__item">
       <a href="dsa_index.md" class="md-tabs__link">
-        独行长路
+        正在施工中🥵
       </a>
     </li>
   
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="download/" class="md-tabs__link">
-      下载
-    </a>
-  </li>
 
       
         
@@ -354,203 +342,380 @@
           
         
       
-  <script type="text/javascript">
-    // 创建半透明图片遮罩
-    function addBg(){
-      var bg = document.createElement('div');
-      bg.className = 'mainbg';
-      var container = document.querySelector('.md-container')
-      container.insertBefore(bg, container.childNodes[0]);
-    }
-    addBg();
+<head>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<style>
 
-    // if (document.readyState === 'loading') {
-    //   document.addEventListener('DOMContentLoaded', addBg);
-    // } else {
-    //   addBg();
-    // }  
-    
-  </script>
-  <style>.md-header{position:initial}.md-main__inner{margin:0}.md-content{display:none}@media screen and (min-width:60em){.md-sidebar--secondary{display:none}}@media screen and (min-width:76.25em){.md-sidebar--primary{display:none}}</style>
+.hero {
+    align-items: center;
+/*    background: white;*/
+    display: flex;
+    padding:4rem 2rem;
+}
 
-  <style type="text/css">
-    .mainbg{
-      position:fixed; 
-      left:0px; 
-      top:0px; 
-      width:100%; 
-      height:100%;
-      z-index: -1; /*不太好。。*/
-      background: linear-gradient(-90deg,#6d6d6d25 1px,transparent 0),linear-gradient(#6d6d6d25 1px,transparent 0),linear-gradient(-90deg,#6d6d6d25 1px,transparent 0),linear-gradient(#6d6d6d25 1px,transparent 0),linear-gradient(transparent 6px,transparent 0,transparent 156px,transparent 0),linear-gradient(-90deg,#6d6d6d25 1px,transparent 0),linear-gradient(-90deg,transparent 6px,transparent 0,transparent 156px,transparent 0),linear-gradient(#6d6d6d25 1px,transparent 0),0 0;
-  		/*background-size: 100% auto;*/
-  		background-position: center;
+.heroBanner {
+    overflow: hidden;
+    padding: 4rem 0;
+    position:relative;
+    padding-top: 2rem;
+}
 
-      background-size: cover;
-      position: absolute;
-      overflow: hidden;
-  	}
-  	.mdx-hero {
-			margin: 0 .8rem;
-		}
-    @media screen and (min-width:60em){
-      .mdx-hero{
-        display:flex;
-        align-items:stretch
-      }
+@media screen and (max-width: 966px) {
+    .heroBanner {
+        padding:2rem
     }
-    .modarea{
-      display: -webkit-flex;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      align-items: center;
-      /*width: 900px;*/
-    }
-    .modbox {
-      margin: 20px 20px;
-      background-color: rgba(255,255,255,0.6);
-      border-radius: 4px;
-      border-color: black;
-      border-style: solid;
-      border-width: 0;
-      position: relative;
-      width:400px;
-      height: 200px;
-      padding: 20px;
+}
 
-      box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .05);
-      -webkit-box-shadow: #d4d2d2 0px 0px 10px;
-      -moz-box-shadow: #d4d2d2 0px 0px 10px;
+#assetarchive-main {
+    display: flex;
+    flex-direction: column;
+    min-height:100%;
+}
 
-      transition: all 0.15s!important;
-      -webkit-transition: all 0.15s!important; /* Safari */
-    }
-    .dummybox {
-      visibility:hidden;
-      height: 100px;
-    }
+#assetarchive-main .main-wrapper {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction:column;
+}
 
-    .modbox:hover{
-      background-color: rgba(255,255,255,.9);
-      transform: scale(1.05);
-      -ms-transform:scale(1.05);     /* IE 9 */
-      -moz-transform:scale(1.05);     /* Firefox */
-      -webkit-transform:scale(1.05); /* Safari 和 Chrome */
-      -o-transform:scale(1.05);
-    }
-    @media screen and (max-width: 512px){
-      .modarea{
-        /*background-color: pink;*/
-        width: 100%;
-        justify-content: center;
-      }
-      .modbox{
-        margin: 20px auto;
-      }
-      .modbox:hover{
-        transform: scale(1);
-        -ms-transform:scale(1);    
-        -moz-transform:scale(1);   
-        -webkit-transform:scale(1);
-        -o-transform:scale(1);
-      }
-    }
-    @media screen and (max-width: 930px){
-      .modarea{
-        width: 100%;
-        /*justify-content: flex-start;*/
-      }
-    }
-    h1 {
-      text-align: center!important; 
-      font-weight: 600!important;
-      margin-bottom: 16px!important;
-    }
+#assetarchive-main .main-wrapper header- {
+  background: linear-gradient(-90deg,#6d6d6d25 1px,transparent 0),linear-gradient(#6d6d6d25 1px,transparent 0),linear-gradient(-90deg,#6d6d6d25 1px,transparent 0),linear-gradient(#6d6d6d25 1px,transparent 0),linear-gradient(transparent 6px,transparent 0,transparent 156px,transparent 0),linear-gradient(-90deg,#6d6d6d25 1px,transparent 0),linear-gradient(-90deg,transparent 6px,transparent 0,transparent 156px,transparent 0),linear-gradient(#6d6d6d25 1px,transparent 0),0 0;
+	background-size: 32px 32px,32px 32px,256px 256px,256px 256px,256px 256px,256px 256px,256px 256px,256px 256px;
+}
 
-    .modicon{
-      position: absolute;
-      left: 20px;
-      top: 20px;
-    }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin:0 calc(1rem * -1)
+}
 
-    .modname{
-      position: absolute;
-      left: 100px;  
-      top: 20px;
-      font-weight: 600!important;
-      color: #333;
-    }
+.col, .container {
+    padding: 0 1rem;
+    width:100%
+}
 
-    .modtag{
-      position: absolute; 
-      left: 100px;
-      top: 60px;
-      font-weight: 300!important;
-    }
+.col {
+    --ifm-col-width: 100%;
+    flex: 1 0;
+    margin-left: 0;
+    max-width:var(--ifm-col-width)
+}
 
-    .modinfo {
-      /*background-color: pink;*/
-      position: absolute;
-      left: 20px;
-      top: 100px;
-      width: calc(100% - 40px);
-      height: 90px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -o-text-overflow:ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      font-weight: 400!important;
-      color: #777;
-      font-size: 14px;
-    }
-    /*768 992 1200 1200+*/
-  </style>
-  <section class="mdx-container">
-    <div class="md-grid md-typeset" style="display: none">
-      <div class="mdx-hero">
-        <div class="mdx-hero__content">
-          <div style="height: 30px"></div>
-            <h1>饥荒模组合集</h1>
-            <div class="modarea">
-              
-              
-                <a class="modbox" href="/zh/dsa_index">
-                  <img src="https://pic.imgdb.cn/item/63f58d32f144a01007b7d0c7.png" width="64" class="modicon">
-                  <div class="modname"> 独行长路 </div>
-                  <div class="modtag"> 联机, 辅助 </div>
-                  <div class="modinfo"> 单人联机延迟消除工具。完美解决延迟问题，无论存档有没有洞穴，操作都丝般顺滑。 </div> 
-                </a>
-              
-                <a class="modbox" href="/zh/momo_index">
-                  <img src="https://pic.imgdb.cn/item/62ceb125f54cd3f93730ca2a.png" width="64" class="modicon">
-                  <div class="modname"> 千代田桃 </div>
-                  <div class="modtag"> 联机, 人物 </div>
-                  <div class="modinfo"> 以碎冰冰之名起誓！ </div> 
-                </a>
-              
-                <a class="modbox" href="/zh/sakana_index">
-                  <img src="https://steamuserimages-a.akamaihd.net/ugc/1788514165627712044/F53DA984DDF7C65385E709B1068ED4E2C95B04DB/" width="64" class="modicon">
-                  <div class="modname"> Sakana & Chinanago </div>
-                  <div class="modtag"> 联机, 装饰 </div>
-                  <div class="modinfo"> 可爱捏。 </div> 
-                </a>
-              
-              
-                <a class="modbox dummybox" href="#"></a>
-              
+.col[class * =col--] {
+    flex:0 0 var(--ifm-col-width)
+}
+
+.col--5 {
+    --ifm-col-width:41.66667%
+}
+
+.col--7 {
+    --ifm-col-width:58.33333%
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
+@media (min-width: 1440px) {
+  .container {
+      max-width: 1140px;
+  }
+}
+
+@media (max-width: 996px) {
+  .col {
+      --ifm-col-width: 100%;
+      flex-basis: var(--ifm-col-width);
+      margin-left:0
+  }
+}
+
+.grey {
+	color: #ccc;
+}
+
+.hero__title {
+    font-size:1.5rem;
+    margin-block-end: .25em;
+   	font-weight: 500;
+}
+
+.hero__subtitle {
+    font-size:1.0rem;
+    font-weight: 400;
+    margin: .5em 0;
+}
+
+.app-snapshot-box {
+	position: relative;
+	width: 100%;
+	padding-top: 75%;
+}
+
+.app-snapshot-child {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.app-snapshot-box {
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+	overflow: hidden;
+}
+
+.snapshot-1 {
+	background: url(imgs/snapshot-1.jpg) no-repeat;
+}
+
+.snapshot-2 {
+	background: url(imgs/snapshot-2.jpg) no-repeat;
+}
+
+.snapshot-3 {
+	background: url(imgs/snapshot-3.jpg) no-repeat;
+}
+
+.snapshot-4 {
+	background: url(imgs/snapshot-4.jpg) no-repeat;
+}
+
+.snapshot-1, .snapshot-2, .snapshot-3, .snapshot-4 {
+	background-size: 100% 100%;
+	opacity: 0;
+	transition: opacity 1s ease;
+}
+
+.snapshot-1 {
+	opacity: 1;
+}
+
+.home-button-group {
+
+}
+
+.home-button-group .md-button {
+	margin-right: .5rem;
+	margin-top: .75rem;
+	margin-bottom: 5.0rem;
+	font-weight: 700;
+	padding: .4em 2em;
+}
+
+@media screen and (max-width: 966px) {
+	.home-button-group .md-button {
+		margin-bottom: 1rem;
+	}
+}
+
+
+.center, .vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content:center
+}
+
+#download-button-warpper {
+	position: relative;
+	z-index: 3;
+}
+
+#download-button-warpper .download-platform-list {
+	position: absolute;
+	left: 0;
+	top: calc(100%);
+	width: 16rem;
+	padding-top: 30px;
+	display: none;
+	opacity: 0;
+	transition: opacity 1s linear;
+}
+
+#download-button-warpper:hover .download-platform-list {
+	display: block;
+	opacity: 1;
+}
+
+.shadow2 {
+	background-color: #fff;
+	padding: 5px;
+	border-radius: .1rem;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.download-platform-item {
+	display: flex;
+	margin: 5px;
+	border-radius: .1rem;
+	padding: 10px;
+}
+
+.download-platform-item:hover {
+	background-color: #eee;
+}
+
+.download-platform-img {
+	position: relative;
+	background: transparent;
+	display: inline-block;
+	justify-content: center;
+	align-items: center;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	overflow: hidden;
+	height: 30px;
+	width: 30px;
+	margin-right: 20px;
+	background-size: 30px 30px;
+}
+
+.md-main {
+/*	display: none;*/
+}
+
+</style>
+  <div id="assetarchive-main">
+    <div class="main-wrapper">
+      <header class="hero heroBanner" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px; min-height: 90vh">
+        <div class="container">
+          <div class="row">
+            <div class="col col--5 center">
+              <h1 class="hero__title">饥荒资源档案</h1>
+              <p class="hero__subtitle">一站式饥荒游戏资源检索工具</p>
+              <div class="home-button-group md-typeset">
+              	<span id="download-button-warpper">
+	                <a title="Download" class="md-button md-button--primary">
+								    下载
+				          </a>
+				          <div class="download-platform-list">
+				          	<div class="shadow2">
+				          	<a href="#windows" class="download-platform-item">				          	
+					          	<span class="download-platform-img" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAANlBMVEUAAABIUGhIUmZIU2dIUmVJU2dIU2VAUG1JU2ZJU2ZJUWdJU2VJUmZJUmNGUmVIU2ZJU2VJU2bBFsTOAAAAEXRSTlMAIIC/YJ9AEN+vkO/PUDDfb+pNkj4AAAC1SURBVFjD7dZLDsMgDEVRDMSEfEjY/2brZMIACVrcQaO+u4CjZzHBIPR2IaXvQJT8OcV5zdnpBtHu7eTmXHLDg5a4rcUZAOlaxN7el5U+A4nYCyFHyVUi2tzNtZHSEFghWjBLAAECBAgQIMDfAG2zYAzbbt48Kmp2fzC7hWe9MkCAAAECBPg/IO/eLpPbDi1YF6jgCrCNBzVYxzJ51YJ1xCyLozu0YF1IvJ/2mt0BFbOjQWi0F2Xe65+ArZbkAAAAAElFTkSuQmCC&quot;);"></span>
+					          	Windows 64位
+
+				          	</a>
+				          	<a href="#macos" class="download-platform-item">
+						          <span class="download-platform-img" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAAARVBMVEUAAABJU2dIUGhEUGpJU2ZIUmZJU2ZJU2VIU2ZIU2RIUGhJU2ZJU2ZJUmVJUmZJU2VIU2ZIVGhIU2VJU2ZJUWdJUWVJU2YKwj2NAAAAFnRSTlMAvyAQ32Cg74BAQHCvUM+Q30Awb5CQOVWoKwAAAYlJREFUWMPt19FuwjAMBVA7aZw2bVpamP//U4cYYd2QZgz3bZzHSERx7NiUnlB6zpVgCutZIpDAerESRsr6ZSOIXhuCOGrDmPvTBpSTTpsuYC9Qe0jAuwNiKkZvAiGwNiMhROMC3QbjfG71mo/25jA5yS+GG8MuZJbjcF3eSinRu1eSS93NUuPd+kXmFB5vopL125TaboWz7nF57HSL/pKlxlhOWe9IIFPp1KFb7XQ6JauJetjzZVO/2ehR7v3+youo22JMDQ+79wjyfP4D2sNgVBd7GMzqJFaX91qtLu+UCXyFk7HhB6gGbyZwnyH+fxu67/CDCNsaGF02OaJ7w2j9HwLHHNWtWn/zvbpopRnbH0b1641L9FuAj8/+rOr1Kb0Rsx8bMbuJMaeQ45lfiBh3xBVcOZ017cGTgNF9O+QXUox4LguZZvdLRgY90ANGZ1+wLc6GbRPnSLGJ+xvKVTyHU9pCGKp0P+KN5JHaj3O/y+QguS2P5JX4cJhPd3VR5bw+HSO9vb097ROc7N24BWk8IwAAAABJRU5ErkJggg==&quot;);"></span>
+						            MacOS
+				          	</a>
+				          	</div>
+				          </div>
+			          </span>
+			          <a href="insiders/" title="Watch demonstration" class="md-button">
+			            观看演示
+			          </a>
+			        </div>
             </div>
-          <!-- <a href="." title="" class="md-button md-button--primary">
-            示例按钮
-          </a> -->
-          <!-- <a href="insiders/" title="Material for MkDocs Insiders" class="md-button">
-            订阅模组
-          </a> -->
+            <div class="col col--7 center">
+            	<div class="app-snapshot-box" id="app-snapshot-box">
+            		<div class="app-snapshot-child snapshot-1">
+            		</div>
+								<div class="app-snapshot-child snapshot-2">
+            		</div>
+								<div class="app-snapshot-child snapshot-3">
+            		</div>
+								<div class="app-snapshot-child snapshot-4">
+            		</div>
+            	</div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <footer class="footer footer--dark" style="display: none">
+      <div class="container container-fluid">
+        <div class="row footer__links">
+          <div class="col footer__col">
+            <div class="footer__title">Community</div>
+            <ul class="footer__items clean-list">
+              <li class="footer__item">
+                <a href="https://discord.linwood.dev" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord
+                  <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_GKq1">
+                    <path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a href="https://linwood.dev/matrix" target="_blank" rel="noopener noreferrer" class="footer__link-item">Matrix
+                  <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_GKq1">
+                    <path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col footer__col">
+            <div class="footer__title">Source code</div>
+            <ul class="footer__items clean-list">
+              <li class="footer__item">
+                <a href="https://github.com/LinwoodDev/butterfly/tree/develop/app" target="_blank" rel="noopener noreferrer" class="footer__link-item">App
+                </a>
+              </li>
+              <li class="footer__item">
+                <a href="https://github.com/LinwoodDev/butterfly/tree/develop/docs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Docs
+                </a>
+              </li>
+              <li class="footer__item">
+                <a href="https://github.com/LinwoodDev/butterfly/blob/develop/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="footer__link-item">Contribution guide
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col footer__col">
+            <div class="footer__title">Legal</div>
+            <ul class="footer__items clean-list">
+              <li class="footer__item">
+                <a href="https://go.linwood.dev/imprint" target="_blank" rel="noopener noreferrer" class="footer__link-item">Imprint
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link-item" href="/privacypolicy">Privacy Policy of the app</a>
+              </li>
+              <li class="footer__item">
+                <a href="https://go.linwood.dev/privacypolicy" target="_blank" rel="noopener noreferrer" class="footer__link-item">Privacy Policy of the website
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom text--center">
+          <div class="footer__copyright">Copyright © 2023 Linwood.</div>
         </div>
       </div>
-    </div>
-  </section>
+    </footer>
+  </div>
+<script type="text/javascript">
+	var box = document.getElementById("app-snapshot-box")
+	var imgs = Array.from(box.getElementsByTagName("div"))
+	var timer = 0
+	var shownIndex = 0
+
+	function nextIndex() {
+		return (shownIndex === imgs.length - 1) ? 0 : shownIndex + 1
+	}
+
+	function setIndex(index) {
+		imgs.forEach(function(v, i) {
+			if (i == index) {
+				v.style.opacity = 1
+			}
+			else {
+				v.style.opacity = 0
+			}
+		})
+		shownIndex = index
+	}
+
+	setInterval(function() {
+		setIndex(nextIndex())
+	}, 5000)
+
+</script>
 
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -583,11 +748,19 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="home.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="." class="md-nav__link md-nav__link--active">
         主页
       </a>
+      
     </li>
   
 
@@ -609,14 +782,14 @@
       
       
         <label class="md-nav__link" for="__nav_2">
-          独行长路
+          正在施工中🥵
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="独行长路" data-md-level="1">
+      <nav class="md-nav" aria-label="正在施工中🥵" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          独行长路
+          正在施工中🥵
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -650,21 +823,6 @@
           
         </ul>
       </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="download/" class="md-nav__link">
-        下载
-      </a>
     </li>
   
 
